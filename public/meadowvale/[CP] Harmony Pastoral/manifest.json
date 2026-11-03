@@ -1,0 +1,9 @@
+{
+  "Name": "Harmony Pastoral",
+  "Author": "Meadowvale",
+  "Version": "1.0.0",
+  "Description": "Seasonal pastel recolor palette designed to coexist cleanly with other Stardew Valley mods.",
+  "UniqueID": "Meadowvale.HarmonyPastoral",
+  "MinimumApiVersion": "4.0.0",
+  "ContentPackFor": { "UniqueID": "Pathoschild.ContentPatcher" }
+}

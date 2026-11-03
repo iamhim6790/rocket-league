@@ -1,0 +1,14 @@
+{
+  "Format": "2.8.0",
+  "ConfigSchema": {
+    "Palette": {
+      "AllowValues": "Harmony Earth, Vibrant Pastoral",
+      "Default": "Harmony Earth"
+    },
+    "Lighting": {
+      "AllowValues": "Natural, Golden Hour, Soft Pastoral",
+      "Default": "Natural"
+    }
+  },
+  "Changes": []
+}

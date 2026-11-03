@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meadowvale</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <noscript>
+      <div class="panel">JavaScript is required to play Terraforge.</div>
+    </noscript>
+    <div id="start-screen" class="panel">
+      <h1>Meadowvale</h1>
+      <p>An original countryside farming adventure</p>
+      <p class="backstory">After years spent in the crowded city, you returned to Meadowvale with a letter from your late grandmother and the keys to her neglected farm. Beneath the tangled grass and quiet hills, you hope to rebuild the place your family once called home—and find a slower, kinder life of your own.</p>
+      <button id="new-world">Begin new farm</button>
+      <button id="load-world">Continue farm</button>
+      <div class="recolor-picker" aria-label="Farm recolor">
+        <span>Recolor</span>
+        <button class="recolor-button active" data-recolor="earthy" type="button">DaisyNiko Earth</button>
+        <button class="recolor-button" data-recolor="vibrant" type="button">Vibrant Pastoral</button>
+      </div>
+      <div class="recolor-picker" aria-label="Seasonal recolor">
+        <span>Season</span>
+        <button class="season-button active" data-season="spring" type="button">Spring</button>
+        <button class="season-button" data-season="summer" type="button">Summer</button>
+        <button class="season-button" data-season="fall" type="button">Fall</button>
+        <button class="season-button" data-season="winter" type="button">Winter</button>
+      </div>
+      <div class="recolor-picker" aria-label="Lighting preset">
+        <span>Lighting</span>
+        <button class="lighting-button active" data-lighting="natural" type="button">Harmony Natural</button>
+        <button class="lighting-button" data-lighting="golden" type="button">Golden Hour</button>
+        <button class="lighting-button" data-lighting="soft" type="button">Soft Pastoral</button>
+      </div>
+      <div class="controls">
+        <b>Controls</b>
+        Move: WASD or arrows · Use tool: click · Select: 1-6<br>
+        Talk: E · Fish: P · Community menu: C · Festival: Y · Sleep: T · Save: F
+      </div>
+    </div>
+
+    <div id="tutorial" class="panel tutorial" hidden>
+      <span class="tutorial-step" id="tutorial-step">1 / 5</span>
+      <h2 id="tutorial-title">Welcome to Meadowvale</h2>
+      <p id="tutorial-text"></p>
+      <div class="tutorial-objectives">
+        <b>Your goal</b>
+        <ul id="tutorial-objectives"></ul>
+      </div>
+      <div class="tutorial-actions">
+        <button id="tutorial-back" type="button">Back</button>
+        <button id="tutorial-next" type="button">Next</button>
+      </div>
+    </div>
+
+    <div id="hud" hidden>
+      <div id="fps-counter">60 FPS</div>
+      <div id="top-left">
+        <div id="date">Spring 1 · 6:00</div>
+        <div>Energy <div class="bar"><div id="energy-fill"></div></div></div>
+        <div id="money">480 coins</div>
+        <div id="weather">Clear</div>
+      </div>
+      <div id="community-panel" hidden>
+        <button id="community-close">Close</button>
+        <h2>Community</h2>
+        <div id="friendships"></div>
+      </div>
+        <div id="npc-panel" hidden>
+          <button id="shop-close">Close</button>
+          <div id="dialogue"></div>
+          <div id="shop-items"></div>
+        </div>
+        <div id="inventory"></div>
+      <div id="toast"></div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

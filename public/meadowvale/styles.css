@@ -1,0 +1,49 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #172b25; font-family: "Courier New", monospace; color: #fff; }
+#game { position: fixed; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; cursor: default; }
+.panel { position: fixed; z-index: 20; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(440px, calc(100% - 32px)); padding: 30px; border: 7px solid #d19a50; border-radius: 2px; outline: 4px solid #5c3822; background: #edd89f; color: #563a27; text-align: center; box-shadow: 0 8px 0 #0008, 0 0 0 8px #9a6235; }
+.panel[hidden], [hidden] { display: none !important; }
+.panel h1 { margin: 0 0 8px; font-size: 52px; color: #427d4b; text-shadow: 2px 2px #c8bd82; }
+.panel p { font-size: 18px; }
+.panel .backstory { margin: 14px 0 20px; font-size: 15px; line-height: 1.5; }
+.controls { margin-top: 18px; line-height: 24px; font-size: 14px; }
+button { padding: 9px 16px; border: 3px outset #c98a4c; border-radius: 5px; background: #e6b75c; color: #50301d; font-weight: bold; cursor: pointer; }
+button:hover { filter: brightness(1.08); }
+.recolor-picker { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; font-size: 13px; font-weight: bold; flex-wrap: wrap; }
+.recolor-picker > span { width: 100%; }
+.recolor-button { padding: 6px 8px; font-family: inherit; font-size: 12px; }
+.recolor-button.active { outline: 3px solid #fff0a3; background: #7fbd57; color: #263d24; }
+.season-button.active, .lighting-button.active { outline: 3px solid #fff0a3; background: #7fbd57; color: #263d24; }
+#game.season-spring { filter: hue-rotate(0deg) saturate(1.08) brightness(1.02); }
+#game.season-summer { filter: hue-rotate(-4deg) saturate(1.18) brightness(1.08) contrast(1.03); }
+#game.season-fall { filter: sepia(.18) hue-rotate(-12deg) saturate(1.16) brightness(.98); }
+#game.season-winter { filter: saturate(.58) brightness(1.12) contrast(.92) hue-rotate(7deg); }
+#game.lighting-golden { filter: sepia(.16) saturate(1.18) brightness(1.08); }
+#game.lighting-soft { filter: saturate(.92) brightness(1.06) contrast(.92); }
+#hud { position: fixed; inset: 0; pointer-events: none; }
+#top-left { position: absolute; left: 14px; top: 12px; min-width: 190px; padding: 9px 12px; border: 5px ridge #d1a05c; border-radius: 3px; background: #efd9a9; color: #503d30; font-weight: bold; box-shadow: 4px 4px 0 #0008; }
+#fps-counter { position: absolute; right: 14px; top: 12px; min-width: 74px; padding: 6px 8px; border: 3px ridge #d1a05c; border-radius: 3px; background: #1f3428dc; color: #dff5c8; font: bold 15px "Courier New", monospace; text-align: center; text-shadow: 1px 1px #000; }
+.bar { width: 160px; height: 14px; display: inline-block; border: 2px solid #795b43; background: #3c312d; vertical-align: middle; }
+#energy-fill { height: 100%; width: 100%; background: linear-gradient(#70d8df, #318ca6); }
+#money { margin-top: 6px; color: #8a641c; }
+#inventory { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; pointer-events: auto; }
+.slot { position: relative; width: 62px; height: 62px; margin: 3px; border: 4px outset #b89663; border-radius: 4px; background: #e3c990; color: #4c3626; text-align: center; box-shadow: 2px 3px #0005; }
+.slot.selected { border-color: #fff1a3; box-shadow: 0 0 8px #fff2a3; }
+.slot-icon { height: 38px; font-size: 30px; line-height: 40px; }
+.slot-name { display: block; font-size: 10px; white-space: nowrap; overflow: hidden; }
+.slot-count { position: absolute; right: 4px; bottom: 2px; font-size: 13px; font-weight: bold; }
+#npc-panel { position: fixed; z-index: 30; right: 16px; top: 16px; width: 330px; max-height: calc(100% - 32px); overflow: auto; padding: 14px; border: 4px ridge #a97845; border-radius: 7px; background: #f1ddb1; color: #503d30; pointer-events: auto; }
+#dialogue { min-height: 46px; margin-bottom: 10px; font-size: 17px; }
+.shop-row { display: flex; justify-content: space-between; align-items: center; margin: 5px 0; }
+.shop-row button { pointer-events: auto; }
+#toast { position: fixed; left: 50%; bottom: 92px; z-index: 40; transform: translateX(-50%); padding: 8px 16px; border: 3px ridge #a97845; background: #f1ddb1; color: #503d30; font-weight: bold; opacity: 0; transition: opacity .2s; }
+#community-panel { position: fixed; z-index: 30; left: 50%; top: 50%; width: 360px; transform: translate(-50%, -50%); padding: 16px; border: 5px ridge #d1a05c; background: #efd9a9; color: #503d30; pointer-events: auto; box-shadow: 8px 8px 0 #0008; }
+#community-panel h2 { margin: 4px 0 12px; text-align: center; }
+.friend-row { margin: 8px 0; }
+.hearts { color: #bd4f4b; letter-spacing: 3px; }
+.tutorial { width: min(520px, calc(100% - 32px)); }
+.tutorial-step { display: block; font-weight: bold; color: #7d5a34; }
+.tutorial h2 { margin: 8px 0; color: #427d4b; }
+.tutorial-actions { display: flex; justify-content: space-between; margin-top: 18px; }
+.tutorial-objectives { padding: 10px 16px; border: 3px solid #c09a62; background: #dfc58d; text-align: left; }
+.tutorial-objectives ul { margin-bottom: 0; }
